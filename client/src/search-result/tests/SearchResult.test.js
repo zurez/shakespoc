@@ -19,7 +19,7 @@ describe("Tests for the search result page", () => {
     await waitFor(() => {
       expect(screen.getByText(successProps.name)).toBeInTheDocument();
     });
-    expect(screen.getByText("Search again?")).toBeInTheDocument();
+    expect(screen.getByText(/Search again?/i)).toBeInTheDocument();
     expect(screen.getByText(successProps.description)).toBeInTheDocument();
     expect(screen.getByRole("img")).toBeInTheDocument();
   });
@@ -29,6 +29,6 @@ describe("Tests for the search result page", () => {
       expect(screen.getByText(errorProps.error)).toBeInTheDocument();
     });
     expect(screen.getByRole("img")).toBeInTheDocument();
-    expect(screen.getByText("Search again?")).toBeInTheDocument();
+    expect(screen.getByText(/Search again?/i)).toBeInTheDocument();
   });
 });

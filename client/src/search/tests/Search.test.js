@@ -8,9 +8,9 @@ describe("Tests for the search page", () => {
   it("tests for the presence of button and input on the search page", async () => {
     render(<Search />);
     await waitFor(() => {
-      expect(screen.getByText("Find your pokemon!")).toBeInTheDocument();
+      expect(screen.getByText(/Find your pokemon!/i)).toBeInTheDocument();
     });
-    expect(screen.getByLabelText("eg: Pikachu")).toBeInTheDocument();
+    expect(screen.getByLabelText(/eg: Pikachu/i)).toBeInTheDocument();
   });
 
   it("tests for calling setPokeName method from the hook with the input value", async () => {
@@ -19,7 +19,7 @@ describe("Tests for the search page", () => {
 
     render(<SearchInput onClick={onClick} loading={loading} />);
 
-    const input = screen.getByLabelText("eg: Pikachu");
+    const input = screen.getByLabelText(/eg: Pikachu/i);
     fireEvent.change(input, { target: { value: "pikachu" } });
     expect(input.value).toBe("pikachu");
 
