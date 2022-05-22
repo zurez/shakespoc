@@ -9,8 +9,12 @@ const successProps = {
   reset,
   error: null,
 };
+
+const errorProps = {
+  error: "This should show up as error",
+};
 describe("Tests for the search result page", () => {
-  it.only("tests for successful result", async () => {
+  it("tests for successful result", async () => {
     render(<SearchResult {...successProps} />);
     await waitFor(() => {
       expect(screen.getByText(successProps.name)).toBeInTheDocument();
@@ -18,5 +22,13 @@ describe("Tests for the search result page", () => {
     expect(screen.getByText("Search again?")).toBeInTheDocument();
     expect(screen.getByText(successProps.description)).toBeInTheDocument();
     expect(screen.getByRole("img")).toBeInTheDocument();
+  });
+  it("tests for error result", async () => {
+    render(<SearchResult {...errorProps} />);
+    await waitFor(() => {
+      expect(screen.getByText(errorProps.error)).toBeInTheDocument();
+    });
+    expect(screen.getByRole("img")).toBeInTheDocument();
+    expect(screen.getByText("Search again?")).toBeInTheDocument();
   });
 });
