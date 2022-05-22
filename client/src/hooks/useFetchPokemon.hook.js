@@ -41,7 +41,6 @@ export function useFetchPokemon() {
             "The pokemon is not available in our records. Please retry with a different name."
           );
         }
-        //  / setError(error.message);
       }
 
       setLoading(false);
