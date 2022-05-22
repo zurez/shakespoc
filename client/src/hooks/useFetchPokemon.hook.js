@@ -19,7 +19,7 @@ export function useFetchPokemon() {
       return;
     }
 
-    if (pokemonName.length < 3) {
+    if (pokemonName?.length < 3) {
       setError("Name must be more than 3 characters");
       return;
     }
