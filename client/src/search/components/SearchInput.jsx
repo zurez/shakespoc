@@ -18,7 +18,6 @@ export default function SearchInput({ onClick, loading }) {
       <InputLabel htmlFor="searchInput">eg: Pikachu</InputLabel>
       <Input
         id="searchInput"
-        data-testid="searchInput"
         aria-describedby="Input for searching pokemon"
         fullWidth
         required={true}
