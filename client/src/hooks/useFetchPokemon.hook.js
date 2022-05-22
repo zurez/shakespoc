@@ -20,7 +20,7 @@ export function useFetchPokemon() {
     }
     const minPokemonNameLength = 4;
     if (pokemonName?.length < minPokemonNameLength) {
-      setError(`Name must be more than ${minPokemonNameLength} characters`);
+      setError(`Name must be more than ${minPokemonNameLength - 1} characters`);
       return;
     }
     const url = `${process.env.REACT_APP_SERVER_URL}/pokemon/${pokemonName
