@@ -18,6 +18,11 @@ export function useFetchPokemon() {
       setPokemonName(null);
       return;
     }
+
+    if (pokemonName.length < 3) {
+      setError("Name must be more than 3 characters");
+      return;
+    }
     const url = `${process.env.REACT_APP_SERVER_URL}/pokemon/${pokemonName
       .toLowerCase()
       .trim()}`;
