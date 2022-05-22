@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import Grid from "@mui/material/Grid";
 import SearchInput from "./components/SearchInput";
-import SearchResult from "../search-result/SearchResult";
+
 import { useFetchPokemon } from "../hooks/useFetchPokemon.hook";
-import { Snackbar } from "@mui/material";
+
+const SearchResult = React.lazy(() => import("../search-result/SearchResult"));
 
 export default function Search() {
-  const { loading, data, setPokemonName, error } = useFetchPokemon();
-  console.log({ data });
+  const { data, setPokemonName, error } = useFetchPokemon();
+
   return (
     <Grid
       container
@@ -25,7 +26,6 @@ export default function Search() {
           <SearchResult {...data} reset={() => setPokemonName(null)} />
         </Grid>
       )}
-      <Snackbar open={!!error} autoHideDuration={6000} message={error} />
     </Grid>
   );
 }
