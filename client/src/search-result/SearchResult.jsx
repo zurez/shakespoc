@@ -9,7 +9,14 @@ import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { Button, CardActions } from "@mui/material";
 
-export default function SearchResult({ name, sprite, description, reset }) {
+export default function SearchResult({
+  name,
+  sprite,
+  description,
+  reset,
+  loading,
+  error,
+}) {
   const lgMatch = useMediaQuery("(min-width:600px)");
 
   const [showSkeleton, setShowSkeleton] = useState(true);
