@@ -18,9 +18,9 @@ export function useFetchPokemon() {
       setPokemonName(null);
       return;
     }
-
-    if (pokemonName?.length < 3) {
-      setError("Name must be more than 3 characters");
+    const minPokemonNameLength = 4;
+    if (pokemonName?.length < minPokemonNameLength) {
+      setError(`Name must be more than ${minPokemonNameLength} characters`);
       return;
     }
     const url = `${process.env.REACT_APP_SERVER_URL}/pokemon/${pokemonName
