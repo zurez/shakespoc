@@ -18,9 +18,9 @@ export function useFetchPokemon() {
       setPokemonName(null);
       return;
     }
-    const url = `${
-      process.env.REACT_APP_SERVER_URL
-    }/pokemon/${pokemonName.toLowerCase()}`;
+    const url = `${process.env.REACT_APP_SERVER_URL}/pokemon/${pokemonName
+      .toLowerCase()
+      .trim()}`;
 
     const fetchApi = async () => {
       setLoading(true);
@@ -32,7 +32,16 @@ export function useFetchPokemon() {
           throw new Error(resp?.data?.message);
         }
       } catch (error) {
-        setError(error.message);
+        if (error.message.includes("429")) {
+          setError(
+            "Too many search request done. Please wait for an hour to try again"
+          );
+        } else {
+          setError(
+            "The pokemon is not available in our records. Please retry with a different name."
+          );
+        }
+        //  / setError(error.message);
       }
 
       setLoading(false);

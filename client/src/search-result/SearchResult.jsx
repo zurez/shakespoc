@@ -51,9 +51,7 @@ export default function SearchResult({
 
       <CardContent>
         <Typography textAlign="center" paragraph={true}>
-          {error
-            ? "The pokemon is not available in our records. Please retry with a different name."
-            : description}
+          {error ? error : description}
         </Typography>
       </CardContent>
       <CardActions>

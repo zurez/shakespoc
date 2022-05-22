@@ -36,6 +36,5 @@ export default function SearchInput({ onClick, loading }) {
     </FormControl>
   );
 
-  console.log({ loading });
   return <>{loading ? <SearchProgress /> : SearchForm}</>;
 }

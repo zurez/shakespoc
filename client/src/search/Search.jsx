@@ -8,7 +8,6 @@ const SearchResult = React.lazy(() => import("../search-result/SearchResult"));
 
 export default function Search() {
   const { data, setPokemonName, error, loading } = useFetchPokemon();
-  console.log(data);
   return (
     <Grid
       container
