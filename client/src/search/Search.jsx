@@ -5,11 +5,10 @@ import SearchInput from "./components/SearchInput";
 import { useFetchPokemon } from "../hooks/useFetchPokemon.hook";
 
 const SearchResult = React.lazy(() => import("../search-result/SearchResult"));
-const SearchProgress = React.lazy(() => import("./components/SearchProgress"));
 
 export default function Search() {
   const { data, setPokemonName, error, loading } = useFetchPokemon();
-
+  console.log(data);
   return (
     <Grid
       container
@@ -17,17 +16,12 @@ export default function Search() {
       justifyContent="center"
       alignItems="center"
     >
-      {loading && (
+      {!(data || error) && (
         <Grid item>
-          <SearchProgress />
+          <SearchInput onClick={setPokemonName} loading={loading} />
         </Grid>
       )}
-      {!loading && !data && (
-        <Grid item>
-          <SearchInput onClick={setPokemonName} />
-        </Grid>
-      )}
-      {!loading && !!data && (
+      {(data || error) && (
         <Grid item>
           <SearchResult
             {...data}

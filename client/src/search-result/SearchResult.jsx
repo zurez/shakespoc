@@ -14,16 +14,16 @@ export default function SearchResult({
   sprite,
   description,
   reset,
-  loading,
   error,
 }) {
   const lgMatch = useMediaQuery("(min-width:600px)");
-
+  const fallbackImageUrl =
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png";
   const [showSkeleton, setShowSkeleton] = useState(true);
 
   return (
     <Card sx={{ maxWidth: lgMatch ? "30vw" : "80vw" }} raised={true}>
-      <CardHeader title={name} />
+      <CardHeader title={error ? "Not found!" : name} />
       <Box
         alignContent={"center"}
         justifyContent={"center"}
@@ -40,18 +40,20 @@ export default function SearchResult({
       <CardMedia
         component={"img"}
         display={!showSkeleton ? "flex" : "none"}
-        src={sprite}
+        src={error ? fallbackImageUrl : sprite}
         onLoad={() => setShowSkeleton(false)}
         onError={({ currentTarget }) => {
           currentTarget.error = null;
-          currentTarget.src =
-            "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png";
+          /** ToDo: This can lead to an infinite error loop if 0.png is not available */
+          currentTarget.src = fallbackImageUrl;
         }}
       />
 
       <CardContent>
         <Typography textAlign="center" paragraph={true}>
-          {description}
+          {error
+            ? "The pokemon is not available in our records. Please retry with a different name."
+            : description}
         </Typography>
       </CardContent>
       <CardActions>

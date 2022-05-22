@@ -8,10 +8,12 @@ import {
 } from "@mui/material";
 
 const SearchButton = React.lazy(() => import("./SearchButton"));
+const SearchProgress = React.lazy(() => import("./SearchProgress"));
 
-export default function SearchInput({ onClick }) {
+export default function SearchInput({ onClick, loading }) {
   const [inputValue, setInputValue] = useState("");
-  return (
+
+  const SearchForm = (
     <FormControl>
       <InputLabel htmlFor="searchInput">eg: Pikachu</InputLabel>
       <Input
@@ -29,7 +31,11 @@ export default function SearchInput({ onClick }) {
           Press find your pokemon button after entering the pokemon name.
         </Typography>
       </FormHelperText>
+
       <SearchButton onClick={() => onClick(inputValue)} />
     </FormControl>
   );
+
+  console.log({ loading });
+  return <>{loading ? <SearchProgress /> : SearchForm}</>;
 }
