@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import Axios from "axios";
 import { setupCache } from "axios-cache-interceptor";
+
 const axios = setupCache(Axios);
 const controller = new AbortController();
+
 export function useFetchPokemon() {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState(null);
@@ -12,6 +14,8 @@ export function useFetchPokemon() {
     if (!pokemonName) {
       setData(null);
       setError(null);
+      setLoading(false);
+      setPokemonName(null);
       return;
     }
     const url = `${
