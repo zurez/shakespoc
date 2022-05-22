@@ -55,7 +55,12 @@ export default function SearchResult({
         </Typography>
       </CardContent>
       <CardActions>
-        <Button fullWidth={true} variant="contained" onClick={reset}>
+        <Button
+          fullWidth={true}
+          variant="contained"
+          onClick={reset}
+          aria-label="search again?"
+        >
           Search again?
         </Button>
       </CardActions>
