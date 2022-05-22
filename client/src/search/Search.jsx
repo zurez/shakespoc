@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Grid from "@mui/material/Grid";
 import SearchInput from "./components/SearchInput";
 
@@ -22,12 +22,14 @@ export default function Search() {
       )}
       {(data || error) && (
         <Grid item>
-          <SearchResult
-            {...data}
-            reset={() => setPokemonName(null)}
-            error={error}
-            loading={loading}
-          />
+          <Suspense fallback={<p>loading result page...</p>}>
+            <SearchResult
+              {...data}
+              reset={() => setPokemonName(null)}
+              error={error}
+              loading={loading}
+            />
+          </Suspense>
         </Grid>
       )}
     </Grid>
