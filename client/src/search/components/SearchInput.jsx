@@ -7,7 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 
-import SearchButton from "./SearchButton";
+const SearchButton = React.lazy(() => import("./SearchButton"));
 
 export default function SearchInput({ onClick }) {
   const [inputValue, setInputValue] = useState("");
