@@ -138,7 +138,7 @@ To run this project, no Environment variable is needed.
 
 As we are talking with external api services, therefore it becomes essential
 that we keep the api requests to a minimum, and therefore, in this project api caching has been implemented
-both on the client and server through `axios-cache-adapter`
+both on the client and server through [axios-cache-interceptor](https://www.npmjs.com/package/axios-cache-interceptor)
 
 
 ## Authors
