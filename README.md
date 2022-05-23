@@ -15,6 +15,7 @@ The following softwares are needed to run the project
 
 **Server:** Node, NestJs, Typescript, Axios
 
+**Test:** Jest, Cypress, Mocha
 
 ## API Reference
 
@@ -114,15 +115,24 @@ To build and run only server
     docker-compose up --build server
 ```
 #### Project can be accessed via browser on `http://localhost:3000` 
-## Running Tests Client
+## Running Tests
 
-
+#### Running unit tests on client
 To run tests, run the following commands
 
 cd into the client directory
 
 ```bash
 cd client
+```
+run tests 
+```bash
+npm run test
+```
+
+#### Running integration tests
+```bash
+cd integration_testing
 ```
 run tests 
 ```bash
