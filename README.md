@@ -184,3 +184,4 @@ TTL for cache expiry is `1 hour`
 - Better documentation
 - Reduce docker build time
 - Remove boilerplate code
+- For integration tests the cache should be reset
