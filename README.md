@@ -9,6 +9,7 @@ The following softwares are needed to run the project
 
 - [>= Nodev16](https://nodejs.org/en/download/) [Required]
 - [Docker](https://www.docker.com/products/docker-desktop/) [To run project through docker]
+- [Latest Chrome Browser](https://www.google.com/chrome/)
 
 ## Tech Stack
 
@@ -138,16 +139,26 @@ run tests
 npm run test
 ```
 
-### Running integration tests
+### Running integration tests on project
 
 ```bash
 cd integration_tests
 ```
 
-run tests
+```bash
+npm install
+```
+
+run tests headless
 
 ```bash
-npm run test
+npm run cypress-run
+```
+
+run tests in browser (Chrome)
+
+```bash
+npm run cypress
 ```
 
 ## Environment Variables
@@ -169,3 +180,4 @@ TTL for cache expiry is `1 hour`
 - Better api response on 429 and 404 error from 3rd party apis
 - Better documentation
 - Reduce docker build time
+- Remove boilerplate code
