@@ -39,6 +39,7 @@ export default function SearchResult({
 
       <CardMedia
         component={"img"}
+        alt={name}
         display={!showSkeleton ? "flex" : "none"}
         src={error ? fallbackImageUrl : sprite}
         onLoad={() => setShowSkeleton(false)}
