@@ -2,7 +2,7 @@ import Axios from 'axios';
 import { setupCache } from 'axios-cache-interceptor';
 import { PokemonClient, PokemonSpecies } from 'pokenode-ts';
 const pokemonClient = new PokemonClient();
-const axios = setupCache(Axios);
+const axios = setupCache(Axios, { ttl: 3600 * 1000 });
 export async function getPokemonDetails(pokemonName) {
   const pokemon: PokemonSpecies = await pokemonClient.getPokemonSpeciesByName(
     pokemonName,
