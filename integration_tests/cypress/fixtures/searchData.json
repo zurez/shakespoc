@@ -1,0 +1,13 @@
+{
+  "minLengthData":"pik",
+  "validPokemon":"pikachu",
+  "validPokemonDescription":"At which hour several of these pok mon gather,  their electricity couldst buildeth and cause lightning storms.",
+  "tooManyReqErrorData":[
+    "Giratina","Dialga","Palkia","Rayquaza","Groudon","Kyogre","Celebi","Ho-Oh","Cubone","Jigglypuff","Crobat",
+    "Weavile","Ludicolo","Samurott","Blissey","Porygon-Z","Empoleon","Gardevoir","Spiritomb","Slaking","Blaziken","Hydreigon"
+  ],
+  "tooManyReqError":"Too many search request done. Please wait for an hour to try again",
+
+  "invalidPokemon":"pikaaa",
+  "invalidPokemonDescription":"The pokemon is not available in our records. Please retry with a different name."
+}

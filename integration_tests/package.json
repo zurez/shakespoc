@@ -1,0 +1,44 @@
+{
+    "name": "shakespoc-backend",
+    "version": "0.0.1",
+    "description": "",
+     "author": "Md Zurez Tuba",
+    "private": true,
+    "license": "UNLICENSED",
+    "scripts": {
+      "create:html:report": "marge reports/mochawesome-bundle.json -o reports/html",
+      "cypress-run-e2e-smoke": "CYPRESS_INCLUDE_TAGS=SMOKE npx cypress run --env NODE_ENV=test ",
+      "cypress-run-e2e-visual": "CYPRESS_INCLUDE_TAGS=VISUAL npx cypress run --env NODE_ENV=test ",
+      "cypress-run": "npx cypress run --env NODE_ENV=test --headless --browser chrome",
+      "cypress": "npx cypress open --env NODE_ENV=test",
+      "delete:reportFolder": "rm -rf reports/",
+      "lint": "eslint . --ext .ts,.tsx --quiet --color",
+      "lint-report": "eslint --fix . -f node_modules/eslint-html-reporter/reporter.js -o report.html",
+      "merge:reports": "mochawesome-merge reports/json/*.json > reports/mochawesome-bundle.json",
+      "post-test": "yarn merge:reports; yarn create:html:report",
+      "pre-test": "yarn run delete:reportFolder",
+      "prettier": "prettier --print-width 80 --trailing-comma all --write '**/*.{ts,js,css,html,tsx}'"
+    },
+    "keywords": [],
+    "dependencies": {
+    },
+    "devDependencies": {
+      "@types/mochawesome": "^6.2.0",
+      "@types/node": "^12.0.10",
+      "cypress": "^9.6.1",
+      "cypress-multi-reporters": "^1.5.0",
+      "cypress-tags": "^0.2.0",
+      "enzyme": "^3.11.0",
+      "enzyme-to-json": "^3.6.1",
+      "mocha": "^8.4.0",
+      "mochawesome": "^6.2.2",
+      "mochawesome-merge": "^4.2.0",
+      "mochawesome-report-generator": "^5.2.0",
+      "nodemon": "^1.19.4",
+      "pino-pretty": "^4.2.1",
+      "start-server-and-test": "^1.11.5",
+      "ts-node": "^9.1.1",
+      "typescript": "^4.3.2"
+    }
+  }
+  
