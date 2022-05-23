@@ -3,12 +3,13 @@
 
 Pokemon described by Shakespeare
 
-
 ## Prerequisite
+
 The following softwares are needed to run the project
 
 - [>= Nodev16](https://nodejs.org/en/download/) [Required]
 - [Docker](https://www.docker.com/products/docker-desktop/) [To run project through docker]
+
 ## Tech Stack
 
 **Client:** Node,React, MaterialUI, Axios
@@ -19,7 +20,7 @@ The following softwares are needed to run the project
 
 ## API Reference
 
-#### Get pokemon by name
+### Get pokemon by name
 
 ```http
   GET /pokemon/{pokemonName}
@@ -29,10 +30,8 @@ The following softwares are needed to run the project
 | :-------- | :------- | :------------------------- |
 | `pokemonName` | `string` | **Required**. The pokemon name |
 
-
-
-
 ## Run Client locally for development
+
 Clone the project
 
 ```bash
@@ -60,6 +59,7 @@ Start the server
 #### Client would be available at `http://localhost:3000`
 
 ## Run Server locally for development
+
 Clone the project
 
 ```bash
@@ -87,6 +87,7 @@ Start the server
 #### Server would be available at `http://localhost:3001`
 
 ## Run project via docker on production
+
 Clone the project
 
 ```bash
@@ -98,26 +99,31 @@ Go to the project directory
 ```bash
   cd shakespoc
 ```
+
 Build image and run via docker
 
 ```bash
   docker-compose up --build
 ```
 
-To build and run only client 
+To build and run only client
 
 ```bash
     docker-compose up --build client
 ```
-To build and run only server 
+
+To build and run only server
 
 ```bash
     docker-compose up --build server
 ```
-#### Project can be accessed via browser on `http://localhost:3000` 
+
+### Project can be accessed via browser on `http://localhost:3000`
+
 ## Running Tests
 
-#### Running unit tests on client
+### Running unit tests on client
+
 To run tests, run the following commands
 
 cd into the client directory
@@ -125,20 +131,24 @@ cd into the client directory
 ```bash
 cd client
 ```
-run tests 
+
+run tests
+
 ```bash
 npm run test
 ```
 
-#### Running integration tests
+### Running integration tests
+
 ```bash
 cd integration_tests
 ```
-run tests 
+
+run tests
+
 ```bash
 npm run test
 ```
-
 
 ## Environment Variables
 
@@ -152,11 +162,10 @@ both on the client and server through [axios-cache-interceptor](https://www.npmj
 TTL for cache expiry is `1 hour`
 
 ## ToDo
+
 - Write unit tests for  server
 - Add more coverage to unit tests for client
 - Improve caching logic
 - Better api response on 429 and 404 error from 3rd party apis
 - Better documentation
-
-
-
+- Reduce docker build time
