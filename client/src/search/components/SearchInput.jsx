@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   FormControl,
   FormHelperText,
@@ -12,6 +12,20 @@ const SearchProgress = React.lazy(() => import("./SearchProgress"));
 
 export default function SearchInput({ onClick, loading }) {
   const [inputValue, setInputValue] = useState("");
+
+  const handleEnter = (event) => {
+    if (event.key === "Enter") {
+      onClick(inputValue);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("keyup", handleEnter);
+
+    return () => {
+      window.removeEventListener("keyup", handleEnter);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [inputValue]);
 
   const SearchForm = (
     <FormControl>
