@@ -132,7 +132,7 @@ npm run test
 
 #### Running integration tests
 ```bash
-cd integration_testing
+cd integration_tests
 ```
 run tests 
 ```bash
