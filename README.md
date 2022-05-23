@@ -57,7 +57,7 @@ Start the server
   npm run start
 ```
 
-#### Client would be available at `http://localhost:3000`
+### Client would be available at `http://localhost:3000`
 
 ## Run Server locally for development
 
@@ -85,7 +85,7 @@ Start the server
   npm run start:dev
 ```
 
-#### Server would be available at `http://localhost:3001`
+### Server would be available at `http://localhost:3001`
 
 ## Run project via docker on production
 
@@ -140,6 +140,9 @@ npm run test
 ```
 
 ### Running integration tests on project
+
+#### Docker must be running for the tests to run. Please restart docker to disable any cache if it was already running. Instruction on running project via docker is mentioned above
+
 
 ```bash
 cd integration_tests
