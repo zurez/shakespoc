@@ -151,8 +151,12 @@ that we keep the api requests to a minimum, and therefore, in this project api c
 both on the client and server through [axios-cache-interceptor](https://www.npmjs.com/package/axios-cache-interceptor)
 TTL for cache expiry is `1 hour`
 
+## ToDo
+[] Write unit tests for  server
+[] Add more coverage to unit tests for client
+[] Improve caching logic
+[] Better api response on 429 and 404 error from 3rd party apis
+[] Better documentation
 
-## Authors
 
-- [@zurez](https://www.github.com/zurez)
 
