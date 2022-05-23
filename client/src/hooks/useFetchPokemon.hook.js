@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Axios from "axios";
 import { setupCache } from "axios-cache-interceptor";
 
-const axios = setupCache(Axios);
+const axios = setupCache(Axios, { ttl: 3600 * 1000 });
 const controller = new AbortController();
 
 export function useFetchPokemon() {
