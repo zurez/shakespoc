@@ -19,7 +19,7 @@ export function useFetchPokemon() {
       return;
     }
     const minPokemonNameLength = 4;
-    if (pokemonName?.length < minPokemonNameLength) {
+    if (pokemonName?.trim().length < minPokemonNameLength) {
       setError(`Name must be more than ${minPokemonNameLength - 1} characters`);
       return;
     }
