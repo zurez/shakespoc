@@ -15,7 +15,7 @@ The following softwares are needed to run the project
 
 **Server:** Node, NestJs, Typescript, Axios
 
-**Test:** Jest, Cypress, Mocha
+**Integration Test:**  Cypress, Mocha, Typescript
 
 ## API Reference
 
